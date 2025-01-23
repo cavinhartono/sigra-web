@@ -6,7 +6,7 @@
 }
 
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,6 +16,20 @@
   align-items: center;
   background: transparent;
   transition: 0.5s;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  /* Untuk ke Tengah */
+  left: 50%;
+  transform: translateX(-50%);
+  /* End: Untuk ke Tengah */
+  width: calc(100% - 160px); /* 160px berasal dari 80px (kanan) + 80px (kiri) */
+  height: 2px;
+  background-color: var(--white-950);
+  border-radius: 2px;
 }
 
 .header.scroller {
@@ -41,7 +55,7 @@
   gap: 64px;
 }
 
-.header :is(.btn-testnow) {
+.btn-testnow {
   display: inline-block;
   padding: 16px 42px;
   background: #f2ff43;
