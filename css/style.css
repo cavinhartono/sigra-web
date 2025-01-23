@@ -1,28 +1,49 @@
-:root {
-  --white-50: #f6f6f6;
-  --white-100: #e7e7e7;
-  --white-200: #d1d1d1;
-  --white-300: #b0b0b0;
-  --white-400: #888;
-  --white-500: #6d6d6d;
-  --white-600: #5d5d5d;
-  --white-700: #4f4f4f;
-  --white-800: #454545;
-  --white-900: #3d3d3d;
-  --white-950: #292929;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--white-50);
-  color: var(--white-950);
-}
+@import url("./master.css");
 
 .container {
   position: relative;
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: 0.5s;
+}
+
+.header.scroller {
+  background: #fff;
+  box-shadow: var(--box-shadow-primary);
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background: var(--red-primary);
+  border-radius: 100%;
+}
+
+.logo .icon {
+  width: 32px;
+  height: 32px;
+  color: var(--white-50);
+}
+
+.nav {
+  display: flex;
+  gap: 64px;
+}
+
+.header :is(.btn-testnow) {
+  display: inline-block;
+  padding: 16px 42px;
+  background: #f2ff43;
+  border-radius: 100px;
 }

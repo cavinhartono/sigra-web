@@ -1,0 +1,65 @@
+:root {
+  --white-50: #f6f6f6;
+  --white-100: #e7e7e7;
+  --white-200: #d1d1d1;
+  --white-300: #b0b0b0;
+  --white-400: #888;
+  --white-500: #6d6d6d;
+  --white-600: #5d5d5d;
+  --white-700: #4f4f4f;
+  --white-800: #454545;
+  --white-900: #3d3d3d;
+  --white-950: #292929;
+  --red-primary: #a94a4a;
+  --box-shadow-primary: 0px 8px 45px rgba(34, 34, 34, 0.1);
+}
+
+.supertitle {
+  font-family: "Abril Fatface", serif;
+}
+
+.montserrat-500 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.montserrat-600 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.montserrat-700 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.list {
+  opacity: 0.75;
+}
+
+.list.active {
+  opacity: 1;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+body {
+  background: var(--white-50);
+  color: var(--white-950);
+}
