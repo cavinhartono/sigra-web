@@ -81,6 +81,21 @@ section {
   text-align: center;
 }
 
+.supertitle {
+  position: relative;
+  margin: 24px 0;
+}
+
+.supertitle sup {
+  position: absolute;
+  top: -16px;
+  font-size: 1.75rem;
+  padding: 8px 24px;
+  background: var(--red-primary);
+  color: var(--white-50);
+  border-radius: 2rem;
+}
+
 .slider-cars {
   margin: 24px 0;
   position: relative;
