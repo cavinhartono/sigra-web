@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+/*
+  Header
+*/
+
 .header {
   position: relative;
   top: 0;
@@ -60,4 +64,42 @@
   padding: 16px 42px;
   background: #f2ff43;
   border-radius: 100px;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  padding: 0 80px;
+}
+
+/*
+  Section: Home
+*/
+
+.home {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.slider-cars {
+  margin: 24px 0;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--white-950);
+  border-radius: 500px;
+  overflow: hidden;
+}
+
+.list {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.image-car {
+  height: 100%;
 }
