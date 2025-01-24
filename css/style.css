@@ -49,8 +49,6 @@
 }
 
 .logo .icon {
-  width: 32px;
-  height: 32px;
   color: var(--white-50);
 }
 
@@ -109,7 +107,7 @@ section {
   overflow: hidden;
 }
 
-.list {
+.home .list {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -117,4 +115,69 @@ section {
 
 .image-car {
   height: 100%;
+}
+
+/*
+  Section: Details
+*/
+
+.details {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.details .content {
+  width: 100%;
+}
+
+.detailsBx {
+  position: relative;
+  width: 324px;
+  height: 500px;
+  border-radius: 324px;
+  overflow: hidden;
+}
+
+.interior-car {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content .subtitle {
+  margin: 16px 0;
+  width: max-content;
+}
+
+.content .title {
+  line-height: 5rem;
+}
+
+.feature-details {
+  margin: 32px 0;
+  display: flex;
+  gap: 64px;
+}
+
+.feature-details .list .text {
+  margin: 32px 0;
+  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  opacity: 0.75;
+}
+
+.feature-details .list {
+  opacity: 1;
+}
+
+.feature-details .list .icon {
+  width: 64px;
+  height: 64px;
+  color: var(--red-primary);
 }
