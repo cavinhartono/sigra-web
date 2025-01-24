@@ -149,11 +149,6 @@ section {
   object-position: center;
 }
 
-.content .subtitle {
-  margin: 16px 0;
-  width: max-content;
-}
-
 .content .title {
   line-height: 5rem;
 }
@@ -166,18 +161,54 @@ section {
 
 .feature-details .list .text {
   margin: 32px 0;
-  text-align: justify;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  opacity: 0.75;
 }
 
-.feature-details .list {
+:is(.feature-details, .engine) .list {
   opacity: 1;
 }
 
 .feature-details .list .icon {
   width: 64px;
   height: 64px;
+  color: var(--red-primary);
+}
+
+/*
+  Section: Specs
+*/
+
+.specsBx {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.imgBx {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 550px;
+  overflow: hidden;
+}
+
+.engine-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.specsBx .desc .text {
+  margin: 24px 0;
+}
+
+.engine {
+  display: flex;
+  justify-content: space-between;
+  margin: 64px 0;
+}
+
+.engine .title {
+  margin: 8px 0;
   color: var(--red-primary);
 }

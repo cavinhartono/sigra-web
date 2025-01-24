@@ -33,6 +33,8 @@ sup,
 }
 
 .subtitle {
+  width: max-content;
+  margin: 16px 0;
   background: var(--red-primary);
   color: var(--white-50);
   padding: 8px 24px;
@@ -41,6 +43,10 @@ sup,
 
 .text {
   font-weight: 500;
+  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  opacity: 0.75;
 }
 
 .title {
@@ -83,6 +89,8 @@ a {
 }
 
 body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
   background: var(--white-50);
   color: var(--white-950);
 }
