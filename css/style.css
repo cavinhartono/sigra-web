@@ -86,8 +86,9 @@ section {
 
 .supertitle sup {
   position: absolute;
-  top: -16px;
-  font-size: 1.75rem;
+  top: 24px;
+  right: 0;
+  font-size: 1.25rem;
   padding: 8px 24px;
   background: var(--red-primary);
   color: var(--white-50);
@@ -211,4 +212,92 @@ section {
 .engine .title {
   margin: 8px 0;
   color: var(--red-primary);
+}
+
+/*
+  Footer
+*/
+
+.footer {
+  background: #fff;
+  padding: 8px 80px;
+}
+
+.footer .title {
+  font-size: 2rem;
+  margin: 16px 0;
+}
+
+.footer .text {
+  font-size: 1.5rem;
+}
+
+.footer ul {
+  width: 50%;
+}
+
+.footer .newsletter {
+  width: max-content;
+}
+
+.footerBx {
+  padding: 32px 0 64px;
+  display: flex;
+}
+
+.footerBx .list {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  transition: 0.1s;
+}
+
+.footerBx .list:hover {
+  opacity: 1;
+}
+
+.footerBx .form {
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  border: 1px solid var(--red-primary);
+  color: var(--red-primary);
+  font-size: 1.3rem;
+  border-radius: 100px;
+  padding: 24px;
+  width: 100%;
+}
+
+.input::placeholder {
+  font-size: 1.3rem;
+  color: var(--red-primary);
+}
+
+.btn-submit {
+  border: none;
+  outline: none;
+  background: var(--red-primary);
+  color: var(--white-50);
+  border-radius: 100%;
+  padding: 16px;
+}
+
+.btn-submit .icon {
+  width: 32px;
+  height: 32px;
+}
+
+.watermark .text {
+  opacity: 1;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-block;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
