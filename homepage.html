@@ -30,12 +30,17 @@
             </svg>
           </span>
         </a>
-        <navbar class="nav">
+        <navbar id="nav-links" class="nav">
           <li class="list active"><a href="#home" class="link">Home</a></li>
           <li class="list"><a href="#details" class="link">Details</a></li>
           <li class="list"><a href="#specs" class="link">Specs</a></li>
         </navbar>
         <a href="#" class="btn-testnow">Test Drive</a>
+        <menu id="toggle" class="toggle">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </menu>
       </header>
       <section id="home" class="home">
         <h1 class="supertitle"><sup>NEW</sup>Daihatsu Sahabatku</h1>
@@ -202,6 +207,13 @@
           </p>
         </div>
       </footer>
+      <script>
+        document
+          .querySelector("#toggle")
+          .addEventListener("click", () =>
+            document.querySelector("#nav-links").classList.toggle("active")
+          );
+      </script>
     </main>
   </body>
 </html>
