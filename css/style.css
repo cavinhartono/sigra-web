@@ -10,7 +10,7 @@
 */
 
 .header {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,8 +18,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: none;
   transition: 0.5s;
+  z-index: 4;
 }
 
 .header::after {
@@ -80,6 +81,7 @@ section {
 */
 
 .home {
+  margin-top: 100px;
   min-height: 100vh;
   text-align: center;
 }
