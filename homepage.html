@@ -209,9 +209,8 @@
       </footer>
       <script>
         // Header, jika discroll memunculkan bayangan
-        const header = document.querySelector("#header");
-
         window.onscroll = () => {
+          const header = document.querySelector("#header");
           if (this.scrollY >= 20) {
             header.classList.add("scroller");
           } else {
