@@ -44,9 +44,15 @@
       </header>
       <section id="home" class="home">
         <h1 class="supertitle"><sup>NEW</sup>Daihatsu Sahabatku</h1>
-        <ul class="slider-cars">
+        <ul id="cars" class="slider-cars">
           <li class="list active">
             <img src="./img/Sigra_Red.png" class="image-car" />
+          </li>
+          <li class="list">
+            <img src="./img/Sigra_Orange.png" class="image-car" />
+          </li>
+          <li class="list">
+            <img src="./img/Sigra_Black.png" class="image-car" />
           </li>
         </ul>
       </section>
@@ -226,6 +232,26 @@
         // Toggle Menu
         document.querySelector("#toggle").onclick = () =>
           document.querySelector("#nav-links").classList.toggle("active");
+
+        // Auto-Slide Mobil
+        window.onload = () => {
+          const Cars = document.querySelectorAll("#cars .list");
+          let current = 0;
+
+          function showCar(index) {
+            Cars.forEach((car, i) => {
+              car.classList.remove("active");
+              if (i === index) car.classList.add("active");
+            });
+          }
+
+          function nextCar() {
+            current = (current + 1) % Cars.length;
+            showCar(current);
+          }
+
+          setInterval(nextCar, 3000);
+        };
 
         // Kirim email (Newsletter)
         document.querySelector("#newsletter").onsubmit = (event) => {
