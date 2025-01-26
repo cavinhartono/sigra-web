@@ -318,6 +318,10 @@ section {
     font-size: 3rem;
   }
 
+  .supertitle sup {
+    display: none;
+  }
+
   :is(.footer, *) .text {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -425,6 +429,19 @@ section {
 
   section {
     padding: 24px;
+  }
+
+  .home {
+    margin-top: 50px;
+    min-height: 100%;
+  }
+
+  .slider-cars {
+    height: 100%;
+  }
+
+  .image-car {
+    width: 100%;
   }
 
   .details {
