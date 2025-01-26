@@ -318,6 +318,23 @@ section {
     font-size: 3rem;
   }
 
+  :is(.footer, *) .text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .content .title {
+    line-height: 3.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
   .header {
     padding: 24px;
   }
@@ -408,5 +425,76 @@ section {
 
   section {
     padding: 24px;
+  }
+
+  .details {
+    height: 100%;
+    display: block;
+  }
+
+  .detailsBx {
+    width: 100%;
+    height: 100%;
+  }
+
+  .engine {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .feature-details {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .feature-details .list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .feature-details .list .text {
+    margin: 16px 0;
+  }
+
+  .interior-car {
+    display: none;
+  }
+
+  .specsBx {
+    flex-direction: column;
+  }
+
+  .engine .title {
+    font-size: 1.5rem;
+  }
+
+  .specsBx .desc .text {
+    margin: 16px 0;
+  }
+
+  .footer {
+    padding: 24px;
+  }
+
+  .footerBx {
+    flex-direction: column;
+  }
+
+  .footer .title {
+    font-size: 1.5rem;
+  }
+
+  .footer ul {
+    width: 100%;
+  }
+
+  .footerBx .list {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  .footer .newsletter {
+    width: 100%;
   }
 }

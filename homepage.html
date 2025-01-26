@@ -182,8 +182,13 @@
               Stay up-to date with Daihatsu latest tech news, products launch,
               and other cool thing - all delivered in your inbox.
             </p>
-            <form action="#" class="form">
-              <input type="text" class="input" placeholder="Enter your email" />
+            <form id="newsletter" class="form">
+              <input
+                id="email"
+                type="text"
+                class="input"
+                placeholder="Enter your email"
+              />
               <button class="btn-submit">
                 <span class="icon">
                   <svg
@@ -221,6 +226,18 @@
         // Toggle Menu
         document.querySelector("#toggle").onclick = () =>
           document.querySelector("#nav-links").classList.toggle("active");
+
+        // Kirim email (Newsletter)
+        document.querySelector("#newsletter").onsubmit = (event) => {
+          event.preventDefault();
+          const email = document.querySelector("#email").value;
+
+          if (email) {
+            alert(`Thank you ${email}, for reaching out to us!`);
+          } else {
+            alert("Please enter a vaild email");
+          }
+        };
       </script>
     </main>
   </body>
