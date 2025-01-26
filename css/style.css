@@ -117,16 +117,18 @@ section {
 
 .slider-cars .list {
   min-width: 100%;
-  position: absolute;
-  top: 0;
-  left: 100%;
   transition: opacity 1s ease-in-out;
   opacity: 0;
+  display: none;
+}
+
+.slider-cars .list.active .image-car {
+  opacity: 1;
 }
 
 .slider-cars .list.active {
+  display: block;
   opacity: 1;
-  left: 0;
 }
 
 .home .list {
@@ -137,6 +139,7 @@ section {
 
 .image-car {
   height: 100%;
+  opacity: 0;
 }
 
 /*
