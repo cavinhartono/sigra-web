@@ -531,4 +531,23 @@ section {
   .footer .newsletter {
     width: 100%;
   }
+
+  .input,
+  .input::placeholder {
+    font-size: 1rem;
+  }
+
+  .input {
+    padding: 16px;
+  }
+
+  .btn-submit {
+    padding: 8px;
+  }
+
+  .watermark .text {
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.795rem;
+  }
 }
