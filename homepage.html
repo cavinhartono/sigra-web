@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Homepage</title>
   </head>
   <body>
@@ -43,8 +44,20 @@
         </menu>
       </header>
       <section id="home" class="home">
-        <h1 class="supertitle"><sup>NEW</sup>Daihatsu Sahabatku</h1>
-        <ul id="cars" class="slider-cars">
+        <h1
+          class="supertitle"
+          data-aos="fade-down"
+          data-aos-easing="ease-in-sine"
+        >
+          <sup>NEW</sup>Daihatsu Sahabatku
+        </h1>
+        <ul
+          id="cars"
+          class="slider-cars"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-anchor-placement="center-bottom"
+        >
           <li class="list active">
             <img src="./img/Sigra_Red.png" class="image-car" />
           </li>
@@ -259,6 +272,10 @@
             alert("Please enter a vaild email");
           }
         };
+      </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
       </script>
     </main>
   </body>
