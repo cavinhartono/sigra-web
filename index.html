@@ -3,37 +3,283 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daihatsu Sigra</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dela+Gothic+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Homepage</title>
   </head>
   <body>
-    <main>
-      <header>
-        <ul>
-          <nav>
-            <li><a href="#">Detail</a></li>
-            <li><a href="#">Spesifikasi</a></li>
-          </nav>
-          <a href="#">
-            <img
-            src="https://e7.pngegg.com/pngimages/853/105/png-clipart-daihatsu-boon-car-toyota-logo-car-angle-triangle.png""
-            class="logo" />
-          </a>
-        </ul>
+    <main class="container">
+      <header
+        id="header"
+        class="fixed top-0 left-0 w-full px-6 py-20 flex justify-between items-center"
+      >
+        <a href="#" class="w-8 h-8 rounded-full">
+          <span class="icon">
+            <svg
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 192.756 192.756"
+            >
+              <g fill-rule="evenodd" clip-rule="evenodd">
+                <path
+                  d="M59.918 71.979c34.982 0 84.05 3.18 107.22 12.721 2.272.909 3.862 1.59 3.862 3.18 0 2.271-4.77 3.634-9.086 4.997-17.264 5.453-47.932 11.812-93.136 14.994L27.207 66.073c-4.089 0-7.496.228-9.995.454l43.161 43.161-11.813 17.037c69.739-11.131 101.315-22.035 115.399-28.395 2.953-1.59 11.584-5.226 11.584-10.45 0-3.181-2.953-4.998-6.586-6.588-14.539-6.133-38.619-10.223-62.471-12.267-24.76-2.499-57.699-3.18-75.872-2.953l38.845 38.845c7.496-.455 14.765-1.137 21.58-1.818l-31.121-31.12z"
+                />
+              </g>
+            </svg>
+          </span>
+        </a>
+        <navbar id="nav-links" class="nav">
+          <li class="list active"><a href="#home" class="link">Home</a></li>
+          <li class="list"><a href="#details" class="link">Details</a></li>
+          <li class="list"><a href="#specs" class="link">Specs</a></li>
+        </navbar>
+        <a href="#" class="btn-testnow">Test Drive</a>
+        <menu id="toggle" class="toggle">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </menu>
       </header>
-      <section class="details">
-        <h1 class="title">Sigra Mobil Impianku</h1>
-        <img
-          src="https://i.pinimg.com/736x/09/f8/d7/09f8d73d29a34a5141fed20f568eb1cd.jpg"
-          class="background"
-        />
+      <section id="home" class="home">
+        <h1
+          class="supertitle"
+          data-aos="fade-down"
+          data-aos-easing="ease-in-sine"
+        >
+          <sup>NEW</sup>Daihatsu Sahabatku
+        </h1>
+        <ul
+          id="cars"
+          class="slider-cars"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-anchor-placement="center-bottom"
+        >
+          <li class="list active">
+            <img src="./img/Sigra_Red.png" class="image-car" />
+          </li>
+          <li class="list">
+            <img src="./img/Sigra_Orange.png" class="image-car" />
+          </li>
+          <li class="list">
+            <img src="./img/Sigra_Black.png" class="image-car" />
+          </li>
+        </ul>
       </section>
+      <section id="details" class="details">
+        <div class="content">
+          <h3 class="subtitle">DETAILS</h3>
+          <h2 class="title">
+            Wujudkan Mimpi Indah dalam <br />
+            Setiap Perjalanan Bareng Keluarga.
+          </h2>
+          <ul class="feature-details">
+            <li class="list">
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22 13.5V21C22 21.5523 21.5523 22 21 22H20C19.4477 22 19 21.5523 19 21V20H5V21C5 21.5523 4.55228 22 4 22H3C2.44772 22 2 21.5523 2 21V13.5L0.757464 13.1894C0.312297 13.0781 0 12.6781 0 12.2192V11.5C0 11.2239 0.223858 11 0.5 11H2.375L4.51334 5.29775C4.80607 4.51715 5.55231 4 6.386 4H17.614C18.4477 4 19.1939 4.51715 19.4867 5.29775L21.625 11H23.5C23.7761 11 24 11.2239 24 11.5V12.2192C24 12.6781 23.6877 13.0781 23.2425 13.1894L22 13.5ZM4 15V17C4 17.5523 4.44772 18 5 18H8.24496C8.3272 18 8.40818 17.9797 8.4807 17.9409C8.72418 17.8107 8.81602 17.5078 8.68582 17.2643L8.68588 17.2643C7.87868 15.7548 6.31672 15 4 15ZM20 15C17.6833 15 16.1213 15.7548 15.3141 17.2643L15.3142 17.2643C15.184 17.5078 15.2758 17.8107 15.5193 17.9409C15.5918 17.9797 15.6728 18 15.755 18H19C19.5523 18 20 17.5523 20 17V15ZM6 6L4.43874 10.6838C4.40475 10.7857 4.38743 10.8925 4.38743 11C4.38743 11.5523 4.83514 12 5.38743 12H18.6126C18.7201 12 18.8268 11.9827 18.9288 11.9487C19.4527 11.774 19.7359 11.2077 19.5613 10.6838L18 6H6Z"
+                  ></path>
+                </svg>
+              </span>
+              <p class="text">
+                <b>Daihatsu Sigra</b> menjadi MPV 7-seater yang lebih berkelas
+                untuk melengkapi gaya berkendara masa kini
+              </p>
+            </li>
+            <li class="list">
+              <span class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M11.9998 1L18 11H6L11.9998 1ZM13 13.5H21V21.5H13V13.5ZM6.75 22C9.37335 22 11.5 19.8734 11.5 17.25C11.5 14.6266 9.37335 12.5 6.75 12.5C4.12665 12.5 2 14.6266 2 17.25C2 19.8734 4.12665 22 6.75 22Z"
+                  ></path>
+                </svg>
+              </span>
+              <p class="text">
+                <b>Interior sporty dan elegan</b> dengan kenyamanan ruang kabin
+                7 penumpang dengan bagasi yang luas
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="detailsBx">
+          <img
+            class="interior-car"
+            src="./img/c65cb8e5-1452-4e40-a727-ceaec1dc3f06.png"
+          />
+        </div>
+      </section>
+      <section id="specs" class="specs">
+        <div class="specsBx">
+          <div class="imgBx">
+            <img
+              src="./img/2f8ab786-7155-45c7-962b-2e012b438d97.png"
+              class="engine-image"
+            />
+          </div>
+          <div class="desc">
+            <h2 class="subtitle">SPECIFICATIONS</h2>
+            <h1 class="title">Performa Mesin</h1>
+            <p class="text">
+              Entry MPV 7 Penumpang yang memiliki 2 tipe mesin 1,000cc yang
+              terjangkau dan 1,200cc yang powerful
+            </p>
+          </div>
+        </div>
+        <div class="engineBx">
+          <ul class="engine">
+            <li class="list">
+              <h2 class="title">1.2 L Engine (3 NR-VE)</h2>
+              <p class="text">
+                <b>Capacity</b> <br />
+                1.197
+              </p>
+              <p class="text">
+                <b>Max Power (PS/rpm)</b> <br />
+                88 / 6.000
+              </p>
+              <p class="text">
+                <b>Max Torque (Nm/rpm)</b> <br />
+                11.0 / 4.200
+              </p>
+            </li>
+            <li class="list">
+              <h2 class="title">1.0 L Engine 1KR-VE</h2>
+              <p class="text">
+                <b>Capacity</b> <br />
+                997
+              </p>
+              <p class="text">
+                <b>Max Power (PS/rpm)</b> <br />
+                67 / 6.000
+              </p>
+              <p class="text">
+                <b>Max Torque (Nm/rpm)</b> <br />
+                9.1 / 4.200
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <footer class="footer">
+        <nav class="footerBx">
+          <ul class="other-pages">
+            <h1 class="title">Other Pages</h1>
+            <li class="list"><a href="#" class="link">Models</a></li>
+            <li class="list"><a href="#" class="link">Feedback</a></li>
+            <li class="list"><a href="#" class="link">Daihatsu Shop</a></li>
+          </ul>
+          <ul class="social-media">
+            <h1 class="title">Social Media</h1>
+            <li class="list">
+              <a href="https://facebook.com/" class="link">Facebook</a>
+            </li>
+            <li class="list">
+              <a href="https://instagram.com/" class="link">Instagram</a>
+            </li>
+            <li class="list">
+              <a href="https://x.com/" class="link">X / Twitter</a>
+            </li>
+            <li class="list">
+              <a href="https://youtube.com/" class="link">YouTube</a>
+            </li>
+          </ul>
+          <div class="newsletter">
+            <h1 class="title">Subscribe to Our Newsletter</h1>
+            <p class="text">
+              Stay up-to date with Daihatsu latest tech news, products launch,
+              and other cool thing - all delivered in your inbox.
+            </p>
+            <form id="newsletter" class="form">
+              <input id="email" type="text" class="input" placeholder="Email" />
+              <button class="btn-submit">
+                <span class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M13.0508 12.361L7.39395 18.0179L5.97974 16.6037L11.6366 10.9468L6.68684 5.99707H18.0006V17.3108L13.0508 12.361Z"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </form>
+          </div>
+        </nav>
+        <div class="watermark">
+          <p class="text">
+            <span>&COPY; 2025 CAVIN HARTONO AND FAUZI RIZA</span> PENGEMBANGAN
+            APLIKASI BERBASIS WEB
+          </p>
+        </div>
+      </footer>
+      <script>
+        // Header, jika discroll memunculkan bayangan
+        window.onscroll = () => {
+          const header = document.querySelector("#header");
+          if (this.scrollY >= 20) {
+            header.classList.add("scroller");
+          } else {
+            header.classList.remove("scroller");
+          }
+        };
+
+        // Toggle Menu
+        document.querySelector("#toggle").onclick = () =>
+          document.querySelector("#nav-links").classList.toggle("active");
+
+        // Auto-Slide Mobil
+        window.onload = () => {
+          const Cars = document.querySelectorAll("#cars .list");
+          let current = 0;
+
+          function showCar(index) {
+            Cars.forEach((car, i) => {
+              car.classList.remove("active");
+              if (i === index) car.classList.add("active");
+            });
+          }
+
+          function nextCar() {
+            current = (current + 1) % Cars.length;
+            showCar(current);
+          }
+
+          setInterval(nextCar, 3000);
+        };
+
+        // Kirim email (Newsletter)
+        document.querySelector("#newsletter").onsubmit = (event) => {
+          event.preventDefault();
+          const email = document.querySelector("#email").value;
+
+          if (email) {
+            alert(`Thank you ${email}, for reaching out to us!`);
+          } else {
+            alert("Please enter a vaild email");
+          }
+        };
+      </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
     </main>
   </body>
 </html>
