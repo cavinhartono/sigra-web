@@ -59,13 +59,13 @@
           data-aos-anchor-placement="center-bottom"
         >
           <li class="list active">
-            <img src="./img/Sigra_Red.png" class="image-car" />
+            <img src="./img/slides_cars/1.png" class="image-car" />
           </li>
           <li class="list">
-            <img src="./img/Sigra_Orange.png" class="image-car" />
+            <img src="./img/slides_cars/2.png" class="image-car" />
           </li>
           <li class="list">
-            <img src="./img/Sigra_Black.png" class="image-car" />
+            <img src="./img/slides_cars/3.png" class="image-car" />
           </li>
         </ul>
       </section>
@@ -172,6 +172,37 @@
           </ul>
         </div>
       </section>
+      <section class="types">
+        <ul id="types" class="slider-cars">
+          <li class="list active">
+            <img src="./img/Sigra_Black.png" class="image-car" />
+            <div class="infoBx">
+              <h3 class="subtitle">WARNA</h3>
+              <h1 class="title">
+                <b>Abu-abu / Gray</b>
+              </h1>
+            </div>
+          </li>
+          <li class="list">
+            <img src="./img/Sigra_Orange.png" class="image-car" />
+            <div class="infoBx">
+              <h3 class="subtitle">WARNA</h3>
+              <h1 class="title">
+                <b>Jingga / Orange</b>
+              </h1>
+            </div>
+          </li>
+          <li class="list">
+            <img src="./img/Sigra_Red.png" class="image-car" />
+            <div class="infoBx">
+              <h3 class="subtitle">WARNA</h3>
+              <h1 class="title">
+                <b>Merah / Red</b>
+              </h1>
+            </div>
+          </li>
+        </ul>
+      </section>
       <footer class="footer">
         <nav class="footerBx">
           <ul class="other-pages">
@@ -221,8 +252,8 @@
         </nav>
         <div class="watermark">
           <p class="text">
-            <span>&COPY; 2025 CAVIN HARTONO AND FAUZI RIZA</span> PENGEMBANGAN
-            APLIKASI BERBASIS WEB
+            <span>&COPY; 2025 CAVIN HARTONO AND FAUZI RIZA</span>
+            <span>TUGAS</span> <span>PENGEMBANGAN APLIKASI BERBASIS WEB</span>
           </p>
         </div>
       </footer>
@@ -243,8 +274,10 @@
 
         // Auto-Slide Mobil
         window.onload = () => {
+          const Colors = document.querySelectorAll("#types .list");
           const Cars = document.querySelectorAll("#cars .list");
-          let current = 0;
+          let currentCar = 0;
+          let currentColor = 0;
 
           function showCar(index) {
             Cars.forEach((car, i) => {
@@ -253,9 +286,18 @@
             });
           }
 
+          function showColor(index) {
+            Colors.forEach((color, i) => {
+              color.classList.remove("active");
+              if (i === index) color.classList.add("active");
+            });
+          }
+
           function nextCar() {
-            current = (current + 1) % Cars.length;
-            showCar(current);
+            currentCar = (currentCar + 1) % Cars.length;
+            currentColor = (currentColor + 1) % Colors.length;
+            showCar(currentCar);
+            showColor(currentColor);
           }
 
           setInterval(nextCar, 3000);

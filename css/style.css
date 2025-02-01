@@ -238,6 +238,37 @@ section {
   color: var(--red-primary);
 }
 
+/* 
+  Types
+*/
+
+.types {
+  margin: 64px 0;
+}
+
+.types .slider-cars {
+  text-align: center;
+}
+
+.types .slider-cars .list {
+  height: 100%;
+}
+
+.types .infoBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-50);
+  background: rgba(34, 34, 34, 0.25);
+  z-index: 1;
+}
+
 /*
   Footer
 */
