@@ -9,22 +9,23 @@
       href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
+    <link rel="stylesheet" href="tailwind/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Homepage</title>
   </head>
-  <body>
-    <main class="container">
+  <body class="font-sans font-medium list-none text-white-950">
+    <main class="relative w-full">
       <header
         id="header"
-        class="fixed top-0 left-0 w-full px-6 py-20 flex justify-between items-center"
+        class="before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:w-[calc(100%-160px)] before:h-0.5 before:bg-white-950 before:rounded fixed top-0 left-0 w-full px-24 py-6 flex justify-between items-center duration-500"
       >
-        <a href="#" class="w-8 h-8 rounded-full">
-          <span class="icon">
+        <a href="#" class="w-8 h-8 bg-red-600 rounded-full">
+          <span>
             <svg
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 192.756 192.756"
+              class="fill-white-100"
             >
               <g fill-rule="evenodd" clip-rule="evenodd">
                 <path
@@ -34,45 +35,63 @@
             </svg>
           </span>
         </a>
-        <navbar id="nav-links" class="nav">
-          <li class="list active"><a href="#home" class="link">Home</a></li>
-          <li class="list"><a href="#details" class="link">Details</a></li>
-          <li class="list"><a href="#specs" class="link">Specs</a></li>
+        <navbar id="nav-links" class="flex gap-16">
+          <li class="list opacity-100">
+            <a href="#home" class="link">Home</a>
+          </li>
+          <li class="list opacity-75">
+            <a href="#details" class="link">Details</a>
+          </li>
+          <li class="list opacity-75">
+            <a href="#specs" class="link">Specs</a>
+          </li>
         </navbar>
-        <a href="#" class="btn-testnow">Test Drive</a>
-        <menu id="toggle" class="toggle">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
+        <a href="#" class="inline-block px-8 py-4 bg-[#f2ff43] rounded-4xl">
+          Test Drive
+        </a>
+        <menu id="toggle" class="hidden z-5">
+          <span class="fill-white-950"></span>
         </menu>
       </header>
-      <section id="home" class="home">
+      <section
+        id="home"
+        class="relative w-full px-24 -z-10 mt-[100px] min-h-screen text-center"
+      >
         <h1
-          class="supertitle"
+          class="font-serif relative py-6 text-[7.675rem]/tight"
           data-aos="fade-down"
           data-aos-easing="ease-in-sine"
         >
-          <sup>NEW</sup>Daihatsu Sahabatku
+          <sup
+            class="font-sans absolute top-6 right-0 text-xl px-6 py-2 bg-red-600 text-white-100 rounded-4xl"
+          >
+            NEW
+          </sup>
+          Daihatsu Sahabatku
         </h1>
         <ul
           id="cars"
-          class="slider-cars"
+          class="px-6 relative w-full h-[500px] bg-white-950 rounded-full flex justify-center items-center overflow-hidden"
           data-aos="fade-up"
           data-aos-delay="500"
           data-aos-anchor-placement="center-bottom"
         >
-          <li class="list active">
-            <img src="./img/Sigra_Red.png" class="image-car" />
+          <li
+            class="h-full transition-opacity duration-500 ease-in-out visible"
+          >
+            <img src="./img/Sigra_Red.png" class="h-full opacity-100" />
           </li>
-          <li class="list">
-            <img src="./img/Sigra_Orange.png" class="image-car" />
+          <li class="h-full transition-opacity duration-500 ease-in-out hidden">
+            <img src="./img/Sigra_Orange.png" class="h-full opacity-0" />
           </li>
-          <li class="list">
-            <img src="./img/Sigra_Black.png" class="image-car" />
+          <li
+            class="h-full transition-opacity duration-500 ease-in-out opacity-0 hidden"
+          >
+            <img src="./img/Sigra_Black.png" class="h-full opacity-0" />
           </li>
         </ul>
       </section>
-      <section id="details" class="details">
+      <section id="details" class="container relative px-24">
         <div class="content">
           <h3 class="subtitle">DETAILS</h3>
           <h2 class="title">
@@ -234,9 +253,9 @@
         window.onscroll = () => {
           const header = document.querySelector("#header");
           if (this.scrollY >= 20) {
-            header.classList.add("scroller");
+            header.classList.add("bg-white", "shadow-xl");
           } else {
-            header.classList.remove("scroller");
+            header.classList.remove("bg-white", "shadow-xl");
           }
         };
 
