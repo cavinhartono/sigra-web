@@ -581,4 +581,8 @@ section {
     text-align: center;
     font-size: 0.795rem;
   }
+
+  .watermark .text span:nth-child(even) {
+    display: none;
+  }
 }
