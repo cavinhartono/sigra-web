@@ -484,6 +484,14 @@ section {
     min-height: 100%;
   }
 
+  .home .slider-cars {
+    height: 250px;
+  }
+
+  .home .slider-cars .list {
+    height: auto;
+  }
+
   .slider-cars {
     height: 100%;
   }
@@ -534,8 +542,17 @@ section {
     font-size: 1.5rem;
   }
 
+  .engine,
+  .types {
+    margin: 0;
+  }
+
   .specsBx .desc .text {
     margin: 16px 0;
+  }
+
+  .slider-cars .list .infoBx .title {
+    font-size: 1.5rem;
   }
 
   .footer {
