@@ -35,6 +35,16 @@
   height: 2px;
   background-color: var(--white-950);
   border-radius: 2px;
+  animation: line_in_header 1s ease-in;
+}
+
+@keyframes line_in_header {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .header.scroller {
