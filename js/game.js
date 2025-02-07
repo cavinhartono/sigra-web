@@ -7,6 +7,10 @@ document.addEventListener("keyup", keyUp);
 
 let player = {
   speed: 5,
+  level: 1,
+  levelThreshold: 500, // Skor untuk naik level
+  levelMultiplier: 1.2, // Faktor peningkatan kecepatan tiap level
+  enemySpeed: 3, // Kecepatan awal musuh
 };
 
 startScreen.addEventListener("click", startGame);
@@ -22,6 +26,7 @@ function keyDown(e) {
   e.preventDefault();
   keys[e.key] = true;
 }
+
 function keyUp(e) {
   e.preventDefault();
   keys[e.key] = false;
@@ -51,16 +56,24 @@ function gamePlay() {
     car.style.top = `${player.y}px`;
     car.style.left = `${player.x}px`;
 
-    window.requestAnimationFrame(gamePlay);
-
     player.score++;
 
-    score.innerHTML = "Score: " + player.score;
+    // Periksa apakah level naik
+    if (player.score >= player.level * player.levelThreshold) {
+      player.level++;
+      player.speed *= player.levelMultiplier; // Tingkatkan kecepatan pemain
+      player.enemySpeed *= player.levelMultiplier; // Tingkatkan kecepatan musuh
+    }
+
+    score.innerHTML = `Score: ${player.score}`;
+
+    window.requestAnimationFrame(gamePlay);
   }
 }
+
 function moveLines() {
   let lines = document.querySelectorAll(".line");
-  lines.forEach((line, index) => {
+  lines.forEach((line) => {
     if (line.y >= 700) {
       line.y -= 750;
     }
@@ -70,8 +83,8 @@ function moveLines() {
 }
 
 function isCollide(car, enemyCar) {
-  carRect = car.getBoundingClientRect();
-  enemyCarRect = enemyCar.getBoundingClientRect();
+  let carRect = car.getBoundingClientRect();
+  let enemyCarRect = enemyCar.getBoundingClientRect();
 
   return !(
     carRect.top > enemyCarRect.bottom ||
@@ -83,7 +96,7 @@ function isCollide(car, enemyCar) {
 
 function moveEnemyCar(car) {
   let enemyCars = document.querySelectorAll(".enemyCar");
-  enemyCars.forEach((enemyCar, index) => {
+  enemyCars.forEach((enemyCar) => {
     if (isCollide(car, enemyCar)) {
       endGame();
     }
@@ -92,7 +105,7 @@ function moveEnemyCar(car) {
       enemyCar.y = -300;
       enemyCar.style.left = Math.floor(Math.random() * 350) + "px";
     }
-    enemyCar.y += player.speed;
+    enemyCar.y += player.enemySpeed; // Gunakan kecepatan musuh yang meningkat
     enemyCar.style.top = enemyCar.y + "px";
   });
 }
@@ -104,6 +117,10 @@ function startGame() {
 
   player.start = true;
   player.score = 0;
+  player.level = 1;
+  player.speed = 5;
+  player.enemySpeed = 3;
+
   window.requestAnimationFrame(gamePlay);
 
   for (let i = 0; i < 5; i++) {
