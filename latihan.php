@@ -27,7 +27,7 @@
         </select>
       </div>
       <div id="input-fill" class="input_fill">
-        <h1 id="title" class="title"></h1>
+        <h1 id="title-formula" class="title">Rumus</h1>
         <div class="field">
           <label for="a" id="labelX">Masukan</label>
           <input type="number" id="a" name="x" required>
@@ -41,30 +41,41 @@
     </form>
   </div>
   <?php
-  if (isset($_POST['submit'])) {
-    $formula = $_POST['mathematicalFormula'];
-    $x = isset($_POST['x']) ? floatval($_POST['x']) : 0;
-    $y = isset($_POST['y']) ? floatval($_POST['y']) : 0;
+  if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['submit'])) {
+      $formula = $_POST['mathematicalFormula'];
+      $x = isset($_POST['x']) ? floatval($_POST['x']) : 0;
+      $y = isset($_POST['y']) ? floatval($_POST['y']) : 0;
+      $result = "";
 
-    switch ($formula) {
-      case "segitiga":
-        $result = 0.5 * $x * $y;
-        echo "0.5 x $x x $y = $result";
-        break;
-      case "pythagores":
-        $result = sqrt(pow($x, 2) + pow($y, 2));
-        echo "$result";
-        break;
-      case "lingkaran":
-        $result = 2 * M_PI * $x;
-        echo "$result";
-        break;
-      default:
-        echo "";
-        break;
+      switch ($formula) {
+        case "segitiga":
+          $formulaTitle = "Hasil untuk Luas Segitiga";
+          $result = 0.5 * $x * $y;
+          break;
+        case "pythagores":
+          $formulaTitle = "Hasil untuk Pythagores";
+          $result = sqrt(pow($x, 2) + pow($y, 2));
+          break;
+        case "lingkaran":
+          $formulaTitle = "Hasil untuk Keliling Lingkaran";
+          $result = 2 * M_PI * $x;
+          break;
+        default:
+          $formulaTitle = "Hasil untuk Rumus";
+          $result = "";
+          break;
+      }
     }
   }
   ?>
+  <?php if ($result != ""): ?>
+    <div id="result-formula" class="result">
+      <h1 class="title"><?php echo $formulaTitle ?></h1>
+      <h4 id="result" class="text"><?php echo $result ?></h4>
+      <button id="close-modal" class="btn">Tutup</button>
+    </div>
+  <?php endif ?>
   <script>
     document.querySelector("#mathematical-formula").onchange = () => {
       let mathematicalFormula = document.querySelector("#mathematical-formula").value;
@@ -72,7 +83,7 @@
       let labelX = document.querySelector("#labelX");
       let labelY = document.querySelector("#labelY");
       let inputY = document.querySelector("#b");
-      let title = document.querySelector("#title");
+      let title = document.querySelector("#title-formula");
 
       switch (mathematicalFormula) {
         case "segitiga":
@@ -105,6 +116,19 @@
           title.innerText = "";
           inputFields.style.display = "none";
           break;
+      }
+    }
+
+    document.querySelector("#close-modal").onclick = () => {
+      // document.querySelector('#result-formula').classList.remove("active");
+      document.querySelector('#result-formula').style.display = "none";
+    }
+
+    window.onclick = (event) => {
+      let result = document.querySelector('#result-formula');
+      if (event.target === modal) {
+        // result.classList.remove("active");
+        document.querySelector('#result-formula').style.display = "none";
       }
     }
   </script>
