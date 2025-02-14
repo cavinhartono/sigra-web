@@ -82,34 +82,49 @@
       let inputFields = document.querySelector("#input-fill");
       let labelX = document.querySelector("#labelX");
       let labelY = document.querySelector("#labelY");
-      let inputY = document.querySelector("#b");
       let title = document.querySelector("#title-formula");
+
+      function labelFills(title, display) {
+        Object.entries(title).forEach(([id, value], index) => {
+          const label = document.getElementById(id);
+          if (label) {
+            label.innerText = value;
+            label.style.display = display[index] || "inline-block";
+          }
+        });
+      }
+
+      function inputYFill(display, required) {
+        document.querySelector("#b").style.display = display;
+        document.querySelector("#b").required = required;
+      }
 
       switch (mathematicalFormula) {
         case "segitiga":
+          labelFills({
+            labelX: "Masukan Alas",
+            labelY: "Masukan Tinggi"
+          }, ['inline-block', 'inline-block']);
+          inputYFill("block", true)
           title.innerText = "Luas Segitiga";
           inputFields.style.display = "block";
-          labelX.innerText = "Masukan Alas";
-          labelY.innerText = "Masukan Tinggi";
-          inputY.style.display = "block";
-          labelY.style.display = "inline-flex";
-          inputY.required = true;
           break;
         case "pythagores":
+          labelFills({
+            labelX: "Masukan A",
+            labelY: "Masukan B"
+          }, ['inline-block', 'inline-block']);
+          inputYFill("block", true)
           title.innerText = "Pythagores";
           inputFields.style.display = "block";
-          labelX.innerText = "Masukan A";
-          labelY.innerText = "Masukan B";
-          labelY.style.display = "inline-flex";
-          inputY.style.display = "block";
-          inputY.required = true;
           break;
         case "lingkaran":
+          inputYFill("none", false)
+          labelFills({
+            labelX: "Masukan Jari-jari",
+            labelY: ""
+          }, ['inline-block', 'none']);
           title.innerText = "Keliling Lingkaran";
-          labelX.innerText = "Masukan Jari-jari";
-          labelY.style.display = "none";
-          inputY.required = false;
-          inputY.style.display = "none";
           inputFields.style.display = "block";
           break;
         default:
