@@ -116,6 +116,26 @@
       display: none;
     }
 
+    .select_fill {
+      position: relative;
+      padding: 16px 0;
+    }
+
+    .select_fill::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: #222;
+      border-radius: 24px;
+    }
+
+    .choice option:disabled {
+      background: #e7e7e7;
+    }
+
     .container {
       position: relative;
       width: 100%;
@@ -154,11 +174,6 @@
       border-end-end-radius: 8px;
     }
 
-    .input_fill .title {
-      margin: 8px 0;
-      font-size: 2rem;
-    }
-
     .field {
       margin: 16px 0;
       width: 100%;
@@ -173,18 +188,30 @@
 <body>
   <div class="container">
     <form method="POST" class="form">
-      <div class="select-fill">
+      <div class="select_fill">
         <label for="mathematical-formula">Pilih Rumus:</label>
         <select class="choice" name="mathematicalFormula" id="mathematical-formula">
           <option value="" selected> -- Pilih salah satu</option>
+          <option value="" disabled> Pertemuan 3</option>
           <option value="segitiga">Luas Segitiga</option>
           <option value="pythagores">Pythagores</option>
           <option value="lingkaran">Keliling Lingkaran</option>
+          <option value="" disabled> Pertemuan 4</option>
           <option value="gaji_pokok">Gaji Pokok</option>
         </select>
       </div>
       <div id="input-fill" class="input_fill">
-        <h1 id="title-formula" class="title">Rumus</h1>
+        <div class="field">
+          <label for="a" id="labelX">Masukan</label>
+          <input type="number" id="a" name="x" required>
+        </div>
+        <div class="field">
+          <label for="b" id="labelY">Masukan</label>
+          <input type="number" id="b" name="y" required>
+        </div>
+        <button type="submit" class="btn" name="submit">Hitung</button>
+      </div>
+      <div id="gaji_pokok" class="input_fill">
         <div class="field">
           <label for="a" id="labelX">Masukan</label>
           <input type="number" id="a" name="x" required>
@@ -379,7 +406,6 @@
       let inputFields = document.querySelector("#input-fill");
       let labelX = document.querySelector("#labelX");
       let labelY = document.querySelector("#labelY");
-      let title = document.querySelector("#title-formula");
 
       function labelFills(title, display) {
         Object.entries(title).forEach(([id, value], index) => {
@@ -403,7 +429,6 @@
             labelY: "Masukan Tinggi"
           }, ['inline-block', 'inline-block']);
           inputYFill("block", true)
-          title.innerText = "Luas Segitiga";
           inputFields.style.display = "block";
           break;
         case "pythagores":
@@ -412,7 +437,6 @@
             labelY: "Masukan B"
           }, ['inline-block', 'inline-block']);
           inputYFill("block", true)
-          title.innerText = "Pythagores";
           inputFields.style.display = "block";
           break;
         case "lingkaran":
@@ -421,11 +445,9 @@
             labelX: "Masukan Jari-jari",
             labelY: ""
           }, ['inline-block', 'none']);
-          title.innerText = "Keliling Lingkaran";
           inputFields.style.display = "block";
           break;
         default:
-          title.innerText = "";
           inputFields.style.display = "none";
           break;
       }
