@@ -116,6 +116,10 @@
       display: none;
     }
 
+    .field.option {
+      flex-direction: row;
+    }
+
     .select_fill {
       position: relative;
       padding: 16px 0;
@@ -196,22 +200,9 @@
           <option value="segitiga">Luas Segitiga</option>
           <option value="pythagores">Pythagores</option>
           <option value="lingkaran">Keliling Lingkaran</option>
-          <option value="" disabled> Pertemuan 4</option>
-          <option value="gaji_pokok">Gaji Pokok</option>
         </select>
       </div>
       <div id="input-fill" class="input_fill">
-        <div class="field">
-          <label for="a" id="labelX">Masukan</label>
-          <input type="number" id="a" name="x" required>
-        </div>
-        <div class="field">
-          <label for="b" id="labelY">Masukan</label>
-          <input type="number" id="b" name="y" required>
-        </div>
-        <button type="submit" class="btn" name="submit">Hitung</button>
-      </div>
-      <div id="gaji_pokok" class="input_fill">
         <div class="field">
           <label for="a" id="labelX">Masukan</label>
           <input type="number" id="a" name="x" required>
@@ -243,6 +234,10 @@
         case "lingkaran":
           $formulaTitle = "Hasil untuk Kel. Lingkaran";
           $result = 2 * M_PI * $x;
+          break;
+        case "gaji_pokok":
+          $formulaTitle = "Menghitung Gaji Pokok";
+          $result = hitungGajiPokok($lamaKerja, $golongan);
           break;
         default:
           $formulaTitle = "Hasil untuk Rumus";
