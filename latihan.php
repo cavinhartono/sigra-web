@@ -235,10 +235,6 @@
           $formulaTitle = "Hasil untuk Kel. Lingkaran";
           $result = 2 * M_PI * $x;
           break;
-        case "gaji_pokok":
-          $formulaTitle = "Menghitung Gaji Pokok";
-          $result = hitungGajiPokok($lamaKerja, $golongan);
-          break;
         default:
           $formulaTitle = "Hasil untuk Rumus";
           $result = null;
