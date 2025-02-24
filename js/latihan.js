@@ -62,6 +62,22 @@ const fields = {
       name: "angka",
     },
   ],
+  deretan_pola: [
+    {
+      label: "Masukan Jumlah:",
+      type: "number",
+      id: "angka",
+      name: "count",
+    },
+  ],
+  deretan_fibonacci: [
+    {
+      label: "Masukan Jumlah:",
+      type: "number",
+      id: "angka",
+      name: "count",
+    },
+  ],
 };
 
 formContainer.style.display = "none";
@@ -125,3 +141,16 @@ function createTextInput(field, container) {
                 <input type="${field.type}" id="${field.id}" name="${field.name}" required />
             `;
 }
+
+document.querySelector("#close-modal").onclick = () => {
+  // document.querySelector('#result-formula').classList.remove("active");
+  document.querySelector("#result-formula").style.display = "none";
+};
+
+window.onclick = (event) => {
+  let result = document.querySelector("#result-formula");
+  if (event.target === modal) {
+    // result.classList.remove("active");
+    document.querySelector("#result-formula").style.display = "none";
+  }
+};
