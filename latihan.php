@@ -61,6 +61,8 @@
           break;
         case 'gaji_pokok':
           $formulaTitle = "Hasil untuk Gaji Pokok";
+          $nip = $_POST['nip'];
+          $nama = $_POST['nama'];
           $golongan = isset($_POST['golongan']) ? strtoupper($_POST['golongan']) : '';
           $lamaKerja = isset($_POST['lama_kerja']) ? (int)$_POST['lama_kerja'] : 0;
           $result = hitungGajiPokok($lamaKerja, $golongan);
@@ -252,12 +254,27 @@
               <!-- Deretan -->
               <p class="text"><?= implode(" ", $result) ?></p>
             <?php else: ?>
+              <table>
+                <tr>
+                  <th>NIP</th>
+                  <th>Nama</th>
+                  <th>Gol.</th>
+                  <th>Lama Kerja</th>
+                  <th>Gaji Pokok</th>
+                </tr>
+                <tr>
+                  <td><?= $nip ?></td>
+                  <td><?= $nama ?></td>
+                  <td align="center"><?= $golongan ?></td>
+                  <td><?= date('Y') - $lamaKerja ?> tahun</td>
+                  <td align="right">Rp <?= number_format($result, 2, ',', '.') ?></td>
+                </tr>
+              </table>
               <!-- Gaji Pokok -->
-              <p class="text">Rp <?= number_format($result, 2, ',', '.') ?></p>
             <?php endif ?>
           <?php endif ?>
         <?php endif ?>
-        <button id="close-modal" class="btn">Tutup</button>
+        <button id="close-modal" class="btn">Selesai</button>
       </div>
     </div>
   <?php endif ?>
