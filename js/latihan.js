@@ -41,6 +41,18 @@ const fields = {
   ],
   gaji_pokok: [
     {
+      label: "Masukan NIP:",
+      type: "text",
+      id: "nip",
+      name: "nip",
+    },
+    {
+      label: "Masukan Nama:",
+      type: "text",
+      id: "nama",
+      name: "nama",
+    },
+    {
       label: "Masukan Lama Kerja:",
       type: "number",
       id: "lama_kerja",
