@@ -27,10 +27,13 @@
           <option value="deretan_eksponensial">Deret Eksponensial</option>
           <option value="deretan_pola">Deret Pola Negatif-Positif</option>
           <option value="deretan_fibonacci">Deret Fibonacci</option>
+          <option value="" disabled>Pertemuan 7</option>
+          <option value="file_upload">Upload File</option>
         </select>
       </div>
       <div id="input-fill" class="input_fill"></div>
       <button type="submit" class="btn" name="submit">Hitung</button>
+      <a href="./homepage.html" class="btn danger">Kembali</a>
     </form>
   </div>
 
@@ -89,6 +92,9 @@
           $formulaTitle = "Hasil untuk Deret Fibonacci";
           $count = isset($_POST['count']) ? (int) $_POST['count'] : 0;
           $result = deretanFibonacci($count);
+          break;
+        case "file_upload":
+
           break;
         default:
           $formulaTitle = "";
@@ -263,7 +269,7 @@
                   <th>Gaji Pokok</th>
                 </tr>
                 <tr>
-                  <td><?= $nip ?></td>
+                  <td align="right"><?= $nip ?></td>
                   <td><?= $nama ?></td>
                   <td align="center"><?= $golongan ?></td>
                   <td><?= date('Y') - $lamaKerja ?> tahun</td>
