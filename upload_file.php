@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
   $filetype = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
   $allowed_types = ['jpg', 'jpeg', 'png', 'pdf'];
-  $max_size = 2 * 1024 * 1024; // 2MB
+  $max_size = 2 * 1024 * 1024; // Ukuran: 2MB
 
   if (!in_array($filetype, $allowed_types)) {
     $_SESSION['error'] = 'Hanya file gambar (JPG, JPEG, dan PNG) dan PDF yang diperbolehkan!';
@@ -43,7 +43,7 @@ $uploaded_files = array_diff(scandir(UPLOAD_DIR), ['.', '..']);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload File Gambar atau PDF</title>
+  <title>Upload File Gambar ataupun PDF</title>
   <style>
     .result {
       position: fixed;
@@ -99,13 +99,7 @@ $uploaded_files = array_diff(scandir(UPLOAD_DIR), ['.', '..']);
           <td align="right"><?= round(filesize(UPLOAD_DIR . $file) / 1024, 2) ?> KB</td>
           <td>
             <?php if (preg_match('/\.(jpg|jpeg|png)$/i', $file)): ?>
-              <button onclick="document.querySelector('#result').style.display = 'block'">View</button>
-              <div id="result" class="result">
-                <div class="detail">
-                  <img src="uploads/<?= htmlspecialchars($file) ?>">
-                  <button id="close-modal">Close</button>
-                </div>
-              </div>
+              <button onclick="openImage('uploads/<?= htmlspecialchars($file) ?>')">View</button>
             <?php else: ?>
               <a href="uploads/<?= htmlspecialchars($file) ?>" target="_blank"> Download </a>
             <?php endif; ?>
@@ -114,18 +108,32 @@ $uploaded_files = array_diff(scandir(UPLOAD_DIR), ['.', '..']);
       <?php endforeach; ?>
     </tbody>
   </table>
-  <script>
-    document.querySelector("#close-modal").onclick = () => {
-      document.querySelector("#result").style.display = "none";
-    };
 
-    window.onclick = (event) => {
-      let result = document.querySelector("#result");
-      if (event.target === modal) {
-        // result.classList.remove("active");
-        document.querySelector("#result").style.display = "none";
+  <div id="result" class="result">
+    <div class="detail">
+      <img id="image" src="">
+      <button id="close-modal" onclick="closeImage()">&times;</button>
+    </div>
+  </div>
+  <script>
+    const result = document.querySelector('#result');
+    const image = document.querySelector('#image');
+
+    function openImage(src) {
+      result.style.display = "flex";
+      image.src = src;
+    }
+
+    function closeImage() {
+      result.style.display = "none";
+      image.src = '';
+    }
+
+    result.addEventListener('click', (event) => {
+      if (e.target === result) {
+        closeImage();
       }
-    };
+    })
   </script>
 </body>
 
