@@ -1,35 +1,6 @@
 <?php
 require_once "config.php";
 
-function uploadFile($file)
-{
-  if ($file["error"] !== UPLOAD_ERR_OK) {
-    return "Terjadi kesalahan saat mengunggah file.";
-  }
-
-  if (!is_dir(UPLOAD_DIR)) {
-    mkdir(UPLOAD_DIR, 0777, true);
-  }
-
-  $fileName = basename($file["name"]);
-  $targetPath = UPLOAD_DIR . $fileName;
-  $fileType = strtolower(pathinfo($targetPath, PATHINFO_EXTENSION));
-
-  if (!in_array($fileType, ALLOWED_TYPES)) {
-    return "Jenis file tidak diperbolehkan. Hanya format " . implode(", ", ALLOWED_TYPES) . " yang diizinkan.";
-  }
-
-  if ($file["size"] > MAX_FILE_SIZE) {
-    return "Ukuran file terlalu besar! Maksimal 2MB.";
-  }
-
-  if (move_uploaded_file($file["tmp_name"], $targetPath)) {
-    return "File berhasil diunggah: <a href='$targetPath'>$fileName</a>";
-  }
-
-  return "Gagal mengunggah file.";
-}
-
 function hitungGajiPokok($tahunMasuk, $golongan)
 {
   $lama_kerja = date('Y') - $tahunMasuk;
